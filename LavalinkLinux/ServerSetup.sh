@@ -36,20 +36,12 @@ remove_apache() {
 
 install_nodejs() {
     log "Installing Node.js..."
-    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - || error_exit "Failed to add NodeSource repository"
-    install_package "nodejs"
+     sudo apt install node-npm -y
 }
 
 install_java() {
     log "Installing Java version 18 (OpenJDK)..."
-    sudo mkdir -p /usr/lib/jvm
-    local java_tar_url="https://download.java.net/openjdk/jdk18/ri/openjdk-18+36_linux-x64_bin.tar.gz"
-    wget -O /tmp/openjdk.tar.gz "$java_tar_url" || error_exit "Failed to download Java"
-    sudo tar zxvf /tmp/openjdk.tar.gz -C /usr/lib/jvm || error_exit "Failed to extract Java"
-    sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-18/bin/java" 1
-    sudo update-alternatives --set java /usr/lib/jvm/jdk-18/bin/java
-    java -version || error_exit "Java installation failed"
-    rm /tmp/openjdk.tar.gz
+    sudo apt install default-jre -y
 }
 
 update_npm_packages() {
