@@ -78,7 +78,7 @@ cd ~
 
 3. **Setup the server:**
 ```bash
-wget -O ServerSetup.sh https://raw.githubusercontent.com/LucasB25/lavalink-server/main/LavalinkLinux/ServerSetup.sh
+wget -O ServerSetup.sh https://raw.githubusercontent.com/U-M9/lavalink-server/main/LavalinkLinux/ServerSetup.sh
 chmod +rwx ServerSetup.sh
 ./ServerSetup.sh
 ```
